@@ -9,6 +9,10 @@ body {
   margin: auto;
 }
 
+p {
+  font-weight: 100;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +37,7 @@ a {
 header {
   padding: 30px 40px 20px 40px;
 }
-header .logo {
+header .header--logo {
   width: 70%;
 }
 header .position {
@@ -47,6 +51,10 @@ header i {
 header p {
   text-decoration: underline;
   text-decoration-color: #575757;
+}
+
+button {
+  box-shadow: 0 4px 8px 4px rgba(129, 128, 128, 0.2);
 }
 
 #reserve {
@@ -68,6 +76,9 @@ header p {
   border-radius: 30px;
   border: none;
   background-image: linear-gradient(#FF79DA, #9356DC);
+}
+#reserve button:hover {
+  opacity: 0.8;
 }
 
 .pill-corner {
@@ -117,12 +128,13 @@ header p {
 .img-box {
   border-radius: 20px 20px 20px 20px;
   background-color: white;
-  margin: 2%;
-  box-shadow: 0 4px 8px 0 rgba(112, 110, 110, 0.2);
+  margin: 2% 1%;
+  box-shadow: 0 4px 8px 0 rgba(129, 128, 128, 0.2);
 }
 
 #restaurants {
   padding: 20px;
+  background-color: rgb(246, 246, 246);
 }
 #restaurants img {
   height: 150px;
@@ -144,19 +156,40 @@ header p {
 }
 #restaurants .bi-heart-fill {
   display: none;
-}
-#restaurants a:hover .bi-heart-fill {
-  display: inline-block;
-  background-color: linear-gradient(#FF79DA, #9356DC);
+  transition: background-color 5s ease;
 }
 #restaurants a:hover .bi-heart {
   display: none;
 }
+#restaurants a:hover .bi-heart-fill {
+  display: inline-block;
+  background-color: linear-gradient(to right, #FF79DA, #9356DC);
+}
 #restaurants h3 {
   margin-bottom: 0;
 }
+#restaurants p {
+  margin-top: 2%;
+}
+
+footer {
+  padding: 30px 40px 20px 40px;
+  background-color: rgb(53, 53, 53);
+}
+footer img {
+  filter: invert(100%);
+}
+footer div {
+  margin: 10px 0 0 0;
+}
+footer a {
+  color: white;
+}
 
 @media only screen and (max-width: 768px) {
+  .flex-item {
+    flex: 100%;
+  }
   body {
     font-size: 16px;
   }
@@ -200,6 +233,18 @@ header p {
   }
   #restaurants .flex-item {
     flex: 100%;
+  }
+  #restaurants .img-box {
+    margin: 3% 0;
+  }
+  #restaurants .img-box:first-child {
+    margin: 0 0 3% 0;
+  }
+  #restaurants .img-box:last-child {
+    margin: 3% 0 10% 0;
+  }
+  #restaurants img {
+    height: 200px;
   }
 }
 
