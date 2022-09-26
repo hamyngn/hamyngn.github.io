@@ -20,6 +20,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+  }
 
     .flex-item {
         flex: auto;
@@ -31,7 +32,6 @@
         font-size: 16px;
         align-items: center;
       }
-  }
 
   a {
     text-decoration: none;
@@ -134,13 +134,60 @@
     }
   }
 
+  .img-box {
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+    margin: 2%;
+    box-shadow: 0 4px 8px 0 rgba(112, 110, 110, 0.2);
+  }
 
-  @media only screen and (max-width: 768px) {
-    .flex-item {
-      flex: 100%;
-      text-align: center;
+  #restaurants {
+    padding: 20px;
+
+    img {
+    height: 150px;
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    object-fit: cover;
     }
 
+    .flex-item {
+        flex: 0%;
+    }
+
+    .flex-row {
+        padding: 0 5%;
+    }
+
+    .description-flex-item {
+        flex: 90%;
+    }
+
+    .icon-flex-item {
+        flex: 10%;
+    }
+
+    .bi-heart-fill {
+        display: none;
+    }
+
+    a:hover {
+        .bi-heart-fill {
+            display: inline-block;
+            background-color: linear-gradient($color-secondary, $color-primary);
+        }
+        .bi-heart {
+            display: none;
+        }
+    }
+
+    h3 {
+        margin-bottom: 0;
+    }
+  }
+
+
+  @media only screen and (max-width: 768px) {
     body {
       font-size: 16px;     
     }
@@ -149,7 +196,8 @@
         padding: 20px 0 0px 0;
 
         .flex-item {
-            width: 100%;
+            flex: 100%;
+            text-align: center;
         }
 
         img {
@@ -191,6 +239,12 @@
     #fonctioning {
         .pill-corner {
             width: 100%;
+        }
+    }
+
+    #restaurants {
+        .flex-item {
+            flex: 100%;
         }
     }
 }
