@@ -9,6 +9,55 @@ body {
   margin: auto;
 }
 
+#loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.loader {
+  position: fixed;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #061016;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s;
+  opacity: 0;
+  top: 100px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+header, main, footer {
+  opacity: 0;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+header, main, footer {
+  animation: fadein 0.5s ease-in 2s;
+  animation-fill-mode: forwards;
+}
+
 p {
   font-weight: 100;
 }
@@ -61,6 +110,7 @@ button {
   border-top: 1px solid #575757;
   background-color: rgb(246, 246, 246);
   padding-bottom: 30px;
+  z-index: 0;
 }
 #reserve h1, #reserve p {
   text-align: center;
@@ -79,6 +129,7 @@ button {
 }
 #reserve button:hover {
   opacity: 0.8;
+  box-shadow: 0 4px 8px 4px rgba(77, 77, 77, 0.2);
 }
 
 .pill-corner {
@@ -154,22 +205,47 @@ button {
 #restaurants .icon-flex-item {
   flex: 10%;
 }
+#restaurants i {
+  font-size: 22px;
+}
 #restaurants .bi-heart-fill {
   display: none;
-  transition: background-color 5s ease;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 #restaurants a:hover .bi-heart {
   display: none;
 }
 #restaurants a:hover .bi-heart-fill {
   display: inline-block;
-  background-color: linear-gradient(to right, #FF79DA, #9356DC);
+}
+#restaurants .bi-heart-fill:hover {
+  color: linear-gradient(to right, #FF79DA, #9356DC);
+  opacity: 1;
 }
 #restaurants h3 {
   margin-bottom: 0;
+  margin-top: 5%;
 }
 #restaurants p {
   margin-top: 2%;
+}
+#restaurants .img-box {
+  position: relative;
+  z-index: 0;
+}
+#restaurants .img-box button {
+  border: none;
+  background-color: #99E2D0;
+  color: rgb(19, 146, 115);
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+#restaurants .new-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
 }
 
 footer {
@@ -244,7 +320,7 @@ footer a {
     margin: 3% 0 10% 0;
   }
   #restaurants img {
-    height: 200px;
+    height: 180px;
   }
 }
 
