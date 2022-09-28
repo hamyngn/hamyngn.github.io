@@ -2,73 +2,21 @@
     box-sizing: border-box;
   }
 
-  $color-primary: #9356DC;
-  $color-secondary: #FF79DA;
-  $color-tertiary: #99E2D0;
-  $color-quaternary: rgba(246,246,246,255);
-  $icon-base-color: rgba(134,134,134,255);
-  $a-hover-color: rgba(245,237,255,255);
+@import "./Utils/variables.scss";
 
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-stack;
     font-size: 16px;
     max-width: 1500px;
     margin: auto;
   }
+
+  header {
+    padding: 30px 40px 20px 40px;
+  }
   
-  #loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  .loader {
-    position: fixed;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #061016;
-    width: 100px;
-    height: 100px;
-    animation: spin 2s;
-    opacity: 0;
-    top: 100px;
-  }
-
-  @keyframes spin {
-    0% { 
-        transform: rotate(0deg);
-        opacity: 0; 
-    }
-
-    50% {
-        opacity: 1; 
-    }
-    100% { 
-        transform: rotate(360deg);
-        opacity: 0;
-     }
-  }
-
-  header, main, footer {
-    opacity: 0;
-  }
-
-  @keyframes fadein {
-    0% { 
-        opacity: 0; 
-    }
-    100% { 
-        opacity: 1;
-     }
-  }
-
-  header, main, footer {
-    animation: fadein .5s ease-in 2s;
-    animation-fill-mode: forwards;
-  }
-
   p {
-    font-weight: 100;
+    font-weight: 300;
   }
   
   .flex-container {
@@ -77,311 +25,126 @@
     align-items: center;
   }
 
-    .flex-item {
-        flex: auto;
-      }
+  .flex-item {
+    flex: auto;
+  }
 
-      .flex-row {
-        display: flex;
-        flex-wrap: nowrap;
-        font-size: 16px;
-        align-items: center;
-      }
+  .flex-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 
   a {
     text-decoration: none;
+    color: black;
   }
 
-  header {
-    padding: 30px 40px 20px 40px;
-
-    .header--logo {
-        width: 70%;
-    }
-
-    .position {
-        width: 30%;
-        border-radius: 20px;
-        background-color: rgba(234,234,234,255);
-    }
-
-    i {
-        padding: 0 10px;
-    }
-
-    p {
-        text-decoration: underline;
-        text-decoration-color: #575757;
-    }
+  @mixin box-shadow {
+    box-shadow: 0 4px 8px 4px rgba(129, 128, 128, 0.2);
   }
 
   button {
-    box-shadow: 0 4px 8px 4px rgba(129, 128, 128, 0.2);
-  }
-  
-  #reserve {
-    border-top: 1px solid #575757;
-    background-color: $color-quaternary;
-    padding-bottom: 30px;
-    z-index: 0;
-
-    h1, p {
-        text-align: center;
-    }
-
-    div {
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    button {
-        color: white;
-        height: 50px;
-        padding: 0 20px;
-        border-radius: 30px;
-        border: none;
-        background-image: linear-gradient($color-secondary, $color-primary);
-
-        &:hover {
-            opacity: 0.8;
-            box-shadow: 0 4px 8px 4px rgba(77, 77, 77, 0.2);      
-        }
-    }
+    @include box-shadow;
   }
 
-  .pill-corner {
-    border: 1px solid #F2F2F2;
-    border-radius: 20px;
-    padding: 10px 10px 10px 0px;
-    margin: 0 10px;
-    width: fit-content;
-    height: 50px; 
-    background-color: $color-quaternary;
-  }
-
-  .round-corner {
-    margin: -10px -10px;
-    padding: 1px 6px;
-    border-radius: 50%;
-    color: white;
-    background: $color-primary;
-  }
-
-  #fonctioning {
-    padding: 20px;
-
-    .flex-container {
-        justify-content: center;
-    }
-
-    .flex-item {
-        margin-bottom: 20px;
-    }
-
-    i {
-        color: $icon-base-color;
-        padding: 0 20px;
-    }
-
-    a {
-        color: black;
-
-        &:hover {
-            background-color: $a-hover-color;
-            
-            i {
-                color: $color-primary
-            }
-
-            .pill-corner {
-                background-color: $a-hover-color;
-            }
-        }
-    }
-  }
-
-  .img-box {
+  .article--img-box {
     border-radius: 20px 20px 20px 20px;
     background-color: white;
     margin: 2% 1%;
     box-shadow: 0 4px 8px 0 rgba(129, 128, 128, 0.2);
   }
 
-  #restaurants {
-    padding: 20px;
-    background-color: $color-quaternary;
+  
+  @import "./Layout/loader.scss", "./Components/heart-icon.scss";
+  @import "./Components/home-header.scss", "./Components/home-sections.scss";
+  @import "./Components/home-article.scss";
+  @import "./Layout/footer.scss";
 
-    img {
-    height: 150px;
-    border-radius: 20px 20px 0px 0px;
-    width: 100%;
-    object-fit: cover;
-    }
 
-    .flex-item {
-        flex: 0%;
-    }
+  .menu__header {
+    text-align: center;
 
-    .flex-row {
-        padding: 0 5%;
-    }
-
-    .description-flex-item {
-        flex: 90%;
-    }
-
-    .icon-flex-item {
+    .header__icon {
         flex: 10%;
+
+        .bi-arrow-left-short {
+            font-size: 35px;
+            color: $footer-color;
+            font-weight: 500;
+          }
     }
 
-    i {
-        font-size: 22px;
-    }
-
-    .bi-heart-fill {
-        display: none;
-        opacity: 0;    
-        transition: all .5s ease-in-out;  
-    }
-
-    a:hover {
-        .bi-heart {
-            display: none;
-        } 
-        .bi-heart-fill {
-            display: inline-block;
-        }
-    }
-
-    .bi-heart-fill:hover {
-        color: (linear-gradient(to right, $color-secondary, $color-primary));
-        opacity: 1;
-    }
-
-    h3 {
-        margin-bottom: 0;
-        margin-top: 5%;
-    }
-
-    p {
-        margin-top: 2%;
-    }
-
-    .img-box {
-        position: relative;
-        z-index: 0;
-
-        button {
-            border: none;
-            background-color: $color-tertiary;
-            color: rgba(19,146,115,255);
-            padding: 5px 10px;
-            border-radius: 3px;
-        }
-    }
-
-    .new-tag {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        z-index: 1;
+    .header__logo {
+        flex: 90%;
+        margin-left: -10%;
     }
   }
+    
+  .menu__img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    z-index: -1;
+  }
 
-  footer {
-    padding: 30px 40px 20px 40px;
-    background-color: rgba(53,53,53,255);
+  .menu__article {
+    position: fixed;
+    border-radius: 30px 30px 0 0;
+    margin: -50px 0 0px 0px;
+    background-color: $color-quaternary;
+    width: 100%;
+    z-index: 0;
 
-    img {
-        filter: invert(100%);
+    .article__h1 {
+        flex: 85%;
+        align-items: center;
     }
 
-    div {
-        margin: 10px 0 0 0;
+    .article--heart-icon {
+        flex: 15%;
+        margin-bottom: -10px;
     }
 
-    a {
-        color: white;
+    h1 {
+        margin: 30px 20px 0 20px;
+        font-family: $font-title;
+        font-size: 25px;
+    }
+
+    .heart-icon {
+        font-size: 20px;
+        position: fixed;
+    }
+
+    h2 {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 10px;
+    }
+
+    hr {
+        width: 40px;
+        border: 2px solid $color-tertiary ;
+        color: $color-tertiary;
+    }
+
+    .menu--starter {
+        margin: 20px 10px 10px 10px;
+
+        
+    }
+
+    .dish-box {
+        height: 60px;
+        border-radius: 20px;
+        background-color: white;
+        @include box-shadow;
     }
   }
 
   @media only screen and (max-width: 768px) {
-    .flex-item {
-        flex: 100%;
-    }
-
-    body {
-      font-size: 16px;     
-    }
-
-    header {
-        padding: 20px 0 0px 0;
-
-        .flex-item {
-            flex: 100%;
-            text-align: center;
-        }
-
-        img {
-            padding-bottom: 10px;
-        }
-
-        .position {
-            background-color: #F2F2F2;
-            border-radius: 0px;
-            box-shadow: inset 0 4px 4px rgba(112, 110, 110, 0.2);
-        }
-
-        i {
-            padding-left: 0;
-        }
-
-        p {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
-    #reserve {
-     border-top: none;   
-     h1 {
-        font-size: 25px;
-        margin: 0;
-        padding: 50px 25px 0px 25px;
-     }
-
-  
-    p {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-    }
-
-    #fonctioning {
-        .pill-corner {
-            width: 100%;
-        }
-    }
-
-    #restaurants {
-        .flex-item {
-            flex: 100%;
-        }
-
-        .img-box {
-            margin: 3% 0;
-
-            &:first-child {
-                margin: 0 0 3% 0;
-            }
-            &:last-child {
-                margin: 3% 0 10% 0;
-            }
-        }
-
-        img {
-            height: 180px;
-        }
-    }
+    .menu__header {
+        padding: 30px 10px 20px 10px;
+      }
 }

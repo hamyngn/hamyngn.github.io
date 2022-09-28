@@ -1,0 +1,26 @@
+.bi-heart {
+    color: black;
+}
+
+.bi-heart-fill {
+    display: none;
+    opacity: 0;    
+    transition: all .5s ease-in-out;  
+}
+
+a:hover {
+    .bi-heart {
+        display: none;
+    } 
+    .bi-heart-fill {
+        display: inline-block;
+    }
+}
+
+.bi-heart-fill:hover {
+    background: linear-gradient(to top, $color-secondary, $color-primary);
+    opacity: 1;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

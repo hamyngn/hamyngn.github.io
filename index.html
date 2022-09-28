@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css" />
     <title>Oh My Food</title>
 </head>
-<body>
+<body id="home">
     <div id="loader"><div class="loader"></div></div>
-    <header class="flex-container">   
+    <header id="header-home" class="flex-container">   
         <div class="flex-item header--logo">
-        <img src="./images/logo/ohmyfood.png" alt="Oh My Food logo" width="150px">
+        <a target="_blank" href="#"><img src="./images/logo/ohmyfood.png" alt="Oh My Food logo" width="150px"></a>
         </div>
-        <div class="flex-item position flex-row">
+        <div class="flex-item location flex-row">
             <p><i class="bi bi-geo-alt-fill"></i>Paris, Belleville</p>
         </div>
     </header>
@@ -45,7 +45,7 @@
         <article id="restaurants">
             <h2>Restaurants</h2>
             <div class="flex-container">
-            <article class="img-box flex-item">  
+            <article class="article--img-box flex-item">  
                 <a target="_blank" href="#">
                     <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
                 </a>
@@ -60,7 +60,7 @@
                     </div>
                 </div> 
             </article>
-            <article class="img-box flex-item">
+            <article class="article--img-box flex-item">
                 <a target="_blank" href="#">
                     <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
                 </a>
@@ -75,13 +75,13 @@
                     </div>
                 </div>
             </article>
-            <article class="img-box flex-item">
-                <a target="_blank" href="#">
+            <article class="article--img-box flex-item">
+                <a target="_blank" href="menu-a-la-francaise.html">
                     <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="A la française">
                 </a>
                 <div class="flex-row">
                    <div class="description-flex-item">
-                        <h3>A la française</h3>
+                    <a target="_blank" href="menu-a-la-francaise.html"><h3>A la française</h3></a>
                         <p>Cité Rouge</p>
                     </div>
                     <div class="icon-flex-item">
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </article>
-            <article class="img-box flex-item">
+            <article class="article--img-box flex-item">
                 <a target="_blank" href="#">
                     <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="La délice des sens">
                 </a>
@@ -108,7 +108,7 @@
     </main>
     <footer class="flex-container">
         <div class="flex-item">
-            <img src="./images/logo/ohmyfood.png" alt="Oh My Food logo" width="100px">
+            <img class="footer--logo" src="./images/logo/ohmyfood.png" alt="Oh My Food logo" width="100px">
             <div>
                 <a target="_blank" href="#"><img src="./images/icons/utensils-solid.svg" alt="Proposer un restaurant" width="12px"> Proposer un restaurant</a>
             </div>
