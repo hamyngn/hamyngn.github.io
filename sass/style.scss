@@ -48,17 +48,31 @@
     @include box-shadow;
   }
 
+  @mixin pill-button {
+    color: white;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border: none;
+    background-image: linear-gradient($color-secondary, $color-primary);
+  }
+
+  @mixin button-hover {
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 4px rgba(77, 77, 77, 0.2);     
+  }
+
   .article--img-box {
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px;
     background-color: white;
     margin: 2% 1%;
     box-shadow: 0 4px 8px 0 rgba(129, 128, 128, 0.2);
   }
 
   
-  @import "./Layout/loader.scss", "./Components/heart-icon.scss";
-  @import "./Components/home-header.scss", "./Components/home-sections.scss";
-  @import "./Components/home-article.scss";
+  @import "./Components/loader.scss", "./Components/heart-icon.scss";
+  @import "./Sections/home-header.scss", "./Sections/home-sections.scss";
+  @import "./Sections/home-article.scss";
   @import "./Layout/footer.scss";
 
 
@@ -89,61 +103,200 @@
   }
 
   .menu__article {
-    position: fixed;
+    position: relative;
     border-radius: 30px 30px 0 0;
-    margin: -50px 0 0px 0px;
+    margin: -50px 0 0 0;
+    padding-bottom: 80px;
     background-color: $color-quaternary;
     width: 100%;
     z-index: 0;
 
-    .article__h1 {
-        flex: 85%;
-        align-items: center;
+    .flex-row {
+      align-items: flex-end;
     }
+  }
 
-    .article--heart-icon {
-        flex: 15%;
-        margin-bottom: -10px;
-    }
+  .article__h1 {
+      flex: 85%;
 
-    h1 {
+      h1 {
         margin: 30px 20px 0 20px;
         font-family: $font-title;
         font-size: 25px;
     }
+  }
+
+  .article--heart-icon {
+    flex: 15%;
 
     .heart-icon {
-        font-size: 20px;
-        position: fixed;
-    }
+      font-size: 20px;
+  }
+  }
 
-    h2 {
-        font-size: 14px;
-        font-weight: 400;
-        margin: 10px;
-    }
+  h2 {
+      position: relative;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 10px;
+  }
 
-    hr {
-        width: 40px;
-        border: 2px solid $color-tertiary ;
-        color: $color-tertiary;
-    }
+  hr {
+      width: 30px;
+      border: 2px solid $color-tertiary ;
+      color: $color-tertiary;
+      position: absolute;
+      left: 20px;
+      margin: -4px 0 0 0;
+  }
 
-    .menu--starter {
-        margin: 20px 10px 10px 10px;
+  .menu--courses {
+      margin: 20px 10px 10px 10px;
 
-        
-    }
+      .flex-item {
+        flex: 0%;
+      }  
+  }
 
-    .dish-box {
-        height: 60px;
-        border-radius: 20px;
-        background-color: white;
-        @include box-shadow;
+  .button__submit {
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+
+  .button--order {
+    @include pill-button;
+    padding: 0 50px;
+    &:hover {
+      @include button-hover;
     }
   }
 
+  .dish-box {
+      height: 75px;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0 0 8px 0 rgba(129, 128, 128, 0.2);
+      margin-top: 25px;
+      overflow: hidden;
+      opacity: 0;
+
+  
+      h3 {
+        margin: 14px 5px 6px 10px;
+        font-weight: 500;
+        font-size: 18px;
+        width: 100%;
+        height: 20px;
+        overflow: hidden;
+      }
+
+      p {
+        margin: 0 5px 0 10px;
+        font-size: 15px;
+        width: 100%;
+        height: 17px;
+        overflow: hidden;
+      }
+
+      .check-button {
+        display: none;
+        border: none;
+        border-radius: 0 15px 15px 0;
+        height: 75px;
+        width: 100px;
+        background-color: $color-tertiary;
+
+        .bi-check-lg {
+          color: $color-tertiary;
+          border-radius: 50%;
+          padding: 4px 5px;
+          margin-bottom: 30px;
+          background-color: white;
+        }
+      }
+
+      .flex-row {
+        align-items: flex-end;
+      }
+
+      .flex-item-left {
+        flex: 85%;
+      }
+
+      .flex-item-right {
+        flex: 15%;
+
+        p {
+          font-weight: 500;
+        }
+      }
+
+      .dish-desc:hover {
+        .desc-flex-item {
+          flex: auto;
+        }
+
+        .flex-item-left {
+          flex: 80%;
+          padding-bottom: 18px;
+        }
+        .flex-item-right {
+          flex: 20%;
+          padding-bottom: 18px;
+        }
+
+        .icon-block {
+          display: inline-block;
+          animation: turn .5s;
+        }
+
+        .check-button {
+          display: inline-block;
+          animation: slide .5s;
+          
+        }
+
+        @keyframes slide {
+          0% {
+            transform: translateX(100%);
+          }
+
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes turn {
+          0% {
+            transform: rotate(180deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+  }
+
+  @keyframes slideIn-Y {
+    0% {  transform: translateY(100%);
+    opacity: 0; }
+    100% {  transform: translateX(0%); 
+    opacity: 1;}
+  }
+
+  .dish-box {
+    animation: slideIn-Y 1s;
+    animation-fill-mode: forwards;
+  }
+
   @media only screen and (max-width: 768px) {
+    .menu__article .menu--courses {
+        .flex-item {
+          flex: 100%;
+        }
+      }
+
     .menu__header {
         padding: 30px 10px 20px 10px;
       }
