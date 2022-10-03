@@ -459,16 +459,20 @@ hr {
   margin: 14px 5px 6px 10px;
   font-weight: 500;
   font-size: 18px;
-  width: 100%;
+  width: 90%;
   height: 20px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dish-box p {
   margin: 0 5px 0 10px;
   font-size: 15px;
-  width: 100%;
+  width: 90%;
   height: 17px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dish-box .check-button {
   display: none;
@@ -535,7 +539,7 @@ hr {
 
 @keyframes slideIn-Y {
   0% {
-    transform: translateY(100%);
+    transform: translateY(25%);
     opacity: 0;
   }
   100% {
@@ -544,8 +548,44 @@ hr {
   }
 }
 .dish-box {
-  animation: slideIn-Y 1s;
+  animation: slideIn-Y 0.5s;
   animation-fill-mode: forwards;
+}
+
+.dish-box:nth-child(1) {
+  animation-delay: 0.25s;
+}
+
+.dish-box:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.dish-box:nth-child(3) {
+  animation-delay: 0.75s;
+}
+
+.dish-box:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.dish-box:nth-child(5) {
+  animation-delay: 1.25s;
+}
+
+.dish-box:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+.dish-box:nth-child(7) {
+  animation-delay: 1.75s;
+}
+
+.dish-box:nth-child(8) {
+  animation-delay: 2s;
+}
+
+.dish-box:nth-child(9) {
+  animation-delay: 2.25s;
 }
 
 @media only screen and (max-width: 768px) {

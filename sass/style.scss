@@ -185,17 +185,21 @@
         margin: 14px 5px 6px 10px;
         font-weight: 500;
         font-size: 18px;
-        width: 100%;
+        width: 90%;
         height: 20px;
         overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       p {
         margin: 0 5px 0 10px;
         font-size: 15px;
-        width: 100%;
+        width: 90%;
         height: 17px;
         overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       .check-button {
@@ -279,15 +283,21 @@
   }
 
   @keyframes slideIn-Y {
-    0% {  transform: translateY(100%);
+    0% {  transform: translateY(25%);
     opacity: 0; }
     100% {  transform: translateX(0%); 
     opacity: 1;}
   }
 
   .dish-box {
-    animation: slideIn-Y 1s;
+    animation: slideIn-Y .5s;
     animation-fill-mode: forwards;
+  }
+
+  @for $i from 1 through 9 {
+    .dish-box:nth-child(#{$i}) {
+      animation-delay: $i*.25s;
+    }
   }
 
   @media only screen and (max-width: 768px) {
