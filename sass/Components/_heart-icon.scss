@@ -1,23 +1,23 @@
-.bi-heart {
-    color: black;
+.fa-heart {
+    font-size: 24px;
 }
 
-.bi-heart-fill {
-    display: none;
+.fill-heart-icon {
+    --fa-display: none;
     opacity: 0;    
     transition: all .5s ease-in-out;  
 }
 
 a:hover {
-    .bi-heart {
-        display: none;
+    .empty-heart-icon {
+        --fa-display: none;
     } 
-    .bi-heart-fill {
-        display: inline-block;
+    .fill-heart-icon {
+        --fa-display: inline-block;
     }
 }
 
-.bi-heart-fill:hover {
+.fill-heart-icon:hover {
     background: linear-gradient(to top, $color-secondary, $color-primary);
     opacity: 1;
     background-clip: text;

@@ -1,6 +1,17 @@
 #restaurants {
-    padding: 20px;
+    padding: 40px 20px 30px 20px;
     background-color: $color-quaternary;
+
+    .article--img-box {
+        border-radius: 20px;
+        background-color: white;
+        margin: 2% 1%;
+        box-shadow: 0 4px 8px 0 rgba(129, 128, 128, 0.2);
+    }
+
+    h2 {
+        margin: 20px 0;
+    }
 
     img {
     height: 150px;
@@ -23,10 +34,7 @@
 
     .icon-flex-item {
         flex: 10%;
-    }
-
-    i {
-        font-size: 22px;
+        margin-bottom: 5%;
     }
 
     h3 {

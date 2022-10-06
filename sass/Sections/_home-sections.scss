@@ -1,7 +1,14 @@
+#home {
+    h2 {
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+
 #reserve {
     border-top: 1px solid #575757;
     background-color: $color-quaternary;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
     z-index: 0;
 
     h1, p {
@@ -18,8 +25,9 @@
         margin-top: 40px;
     }
 
-    button {
+    .button {
         @include pill-button;
+        @include box-shadow;
 
         &:hover {
             @include button-hover; 
@@ -28,7 +36,11 @@
   }
 
   #fonctioning {
-    padding: 20px 20px 35px 20px;
+    padding: 40px 20px 50px 20px;
+
+    h2 {
+        margin: 10px 0 30px 0;
+    }
 
     .flex-container {
         justify-content: center;
@@ -40,33 +52,33 @@
     }
 
     .pill-corner {
-        border: 1px solid #F2F2F2;
+        border: 1px #F2F2F2;
         border-radius: 20px;
-        padding: 10px 10px 10px 0px;
         margin: 0 20px 0 10px;
+        padding-right: 20px;
         width: fit-content;
-        height: 50px; 
+        height: 70px; 
         background-color: $color-quaternary;
       }
     
       .round-corner {
-        margin: -10px -10px;
-        padding: 4px 6px 2px 6px;
+        margin: -16px -16px;
+        padding: 5px 9px 4px 9px;
         border-radius: 50%;
         color: white;
         background: $color-primary;
-        font-size: 10px;
-        font-weight: 300;
+        font-size: 13px;
+        font-weight: 400;
       }
 
     i {
         color: $icon-base-color;
-        padding: 0 20px;
+        padding: 0 30px 0 40px;
     }
 
-    button {
-        height: 60px;
+    .button {
         font-weight: 500;
+        font-size: 18px;
     }
 
     a {

@@ -1,0 +1,17 @@
+.menu__header {
+    text-align: center;
+
+    .header__icon {
+        flex: 10%;
+
+        i {
+            font-size: 20px;
+            color: $footer-color;
+          }
+    }
+
+    .header__logo {
+        flex: 90%;
+        margin-left: -10%;
+    }
+  }
