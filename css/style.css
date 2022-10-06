@@ -2,6 +2,22 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -20,22 +36,6 @@
 
 header {
   padding: 30px 40px 20px 40px;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  max-width: 1500px;
-  margin: auto;
-}
-
-p {
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-  color: black;
 }
 
 #home #loader {
@@ -370,6 +370,9 @@ footer a {
 .menu__header {
   text-align: center;
 }
+.menu__header a {
+  display: block;
+}
 .menu__header .header__icon {
   flex: 10%;
 }
@@ -576,6 +579,10 @@ hr {
 
 .dish-box:nth-child(3) {
   animation-delay: 0.75s;
+}
+
+.dish-box:nth-child(4) {
+  animation-delay: 1s;
 }
 
 @media only screen and (max-width: 768px) {

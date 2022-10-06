@@ -197,7 +197,7 @@
     animation-fill-mode: forwards;
   }
 
-  @for $i from 1 through 3 {
+  @for $i from 1 through 4 {
     .dish-box:nth-child(#{$i}) {
       animation-delay: $i*.25s;
     }
