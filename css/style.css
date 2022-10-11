@@ -152,7 +152,7 @@ header {
   padding: 15px 20px;
   border-radius: 30px;
   border: none;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-image: linear-gradient(to right bottom, #FF79DA, #9356DC 120%);
   box-shadow: 0 4px 8px 1px rgba(129, 128, 128, 0.4);
 }
 #reserve .button:hover {
@@ -462,7 +462,7 @@ hr {
   padding: 15px 20px;
   border-radius: 30px;
   border: none;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-image: linear-gradient(to right bottom, #FF79DA, #9356DC 120%);
   padding: 0 50px;
 }
 .button--order:hover {
