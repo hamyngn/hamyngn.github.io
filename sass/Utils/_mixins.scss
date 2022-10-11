@@ -13,5 +13,5 @@ background-image: linear-gradient(to bottom right, $color-secondary, $color-prim
 
 @mixin button-hover {
     opacity: 0.8;
-    box-shadow: 0 4px 8px 4px rgba(77, 77, 77, 0.2);     
+    box-shadow: 0 4px 8px 1px rgba(77, 77, 77, 0.4);     
 }

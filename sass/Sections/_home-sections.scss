@@ -27,7 +27,7 @@
 
     .button {
         @include pill-button;
-        @include box-shadow;
+        box-shadow: 0 4px 8px 1px rgba(129, 128, 128, 0.4);
 
         &:hover {
             @include button-hover; 
@@ -59,10 +59,11 @@
         width: fit-content;
         height: 70px; 
         background-color: $color-quaternary;
+        @include box-shadow;
       }
     
       .round-corner {
-        margin: -16px -16px;
+        margin: -14px -14px;
         padding: 5px 9px 4px 9px;
         border-radius: 50%;
         color: white;
@@ -77,8 +78,8 @@
     }
 
     .button {
-        font-weight: 500;
-        font-size: 18px;
+        font-weight: 600;
+        font-size: 15px;
     }
 
     a {
