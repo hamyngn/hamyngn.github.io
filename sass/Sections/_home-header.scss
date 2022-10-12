@@ -1,21 +1,30 @@
 #header-home {
     .header--logo {
-        width: 70%;
+        width: 60%;
     }
 
     .location {
-        width: 30%;
+        width: 40%;
         border-radius: 20px;
         background-color: rgba(234,234,234,255);
+        padding: 15px;
     }
 
     i {
         padding: 0 10px;
+        color: #262626;
     }
 
-    p {
-        text-decoration-color: #575757;
+    input {
+        border: none;
+        background-color: rgba(234,234,234,255);
         font-weight: 500;
+        color: #262626;
+
+        &:focus {
+            outline: none;
+            background-color: rgba(234,234,234,255);
+        }
     }
   }
 
@@ -38,13 +47,11 @@
         }
 
         i {
-            padding-left: 0;
+            margin-left: 60px;
         }
 
-        p {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
+        .flex-row {
+            justify-content: center;
         }
     }
   }

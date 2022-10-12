@@ -68,7 +68,7 @@ header {
     opacity: 0;
   }
 }
-#home header, #home main, #home footer {
+#home header, #home section, #home main, #home footer {
   opacity: 0;
 }
 @keyframes fadein {
@@ -79,25 +79,33 @@ header {
     opacity: 1;
   }
 }
-#home header, #home main, #home footer {
+#home header, #home section, #home main, #home footer {
   animation: fadein 0.5s ease-in 2s;
   animation-fill-mode: forwards;
 }
 
 #header-home .header--logo {
-  width: 70%;
+  width: 60%;
 }
 #header-home .location {
-  width: 30%;
+  width: 40%;
   border-radius: 20px;
   background-color: rgb(234, 234, 234);
+  padding: 15px;
 }
 #header-home i {
   padding: 0 10px;
+  color: #262626;
 }
-#header-home p {
-  text-decoration-color: #575757;
+#header-home input {
+  border: none;
+  background-color: rgb(234, 234, 234);
   font-weight: 500;
+  color: #262626;
+}
+#header-home input:focus {
+  outline: none;
+  background-color: rgb(234, 234, 234);
 }
 
 @media only screen and (max-width: 768px) {
@@ -116,12 +124,10 @@ header {
     box-shadow: inset 0 4px 4px rgba(112, 110, 110, 0.2);
   }
   #header-home i {
-    padding-left: 0;
+    margin-left: 60px;
   }
-  #header-home p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+  #header-home .flex-row {
+    justify-content: center;
   }
 }
 #home h2 {
@@ -157,7 +163,7 @@ header {
 }
 #reserve .button:hover {
   opacity: 0.8;
-  box-shadow: 0 4px 8px 1px rgba(77, 77, 77, 0.4);
+  box-shadow: 0 8px 16px 1px rgba(5, 5, 5, 0.4);
 }
 
 #fonctioning {
@@ -402,7 +408,8 @@ footer a {
   width: 100%;
   z-index: 0;
 }
-.menu__article .flex-row {
+
+.align-items-end {
   align-items: flex-end;
 }
 
@@ -467,7 +474,7 @@ hr {
 }
 .button--order:hover {
   opacity: 0.8;
-  box-shadow: 0 4px 8px 1px rgba(77, 77, 77, 0.4);
+  box-shadow: 0 8px 16px 1px rgba(5, 5, 5, 0.4);
 }
 
 .dish-box {
@@ -479,27 +486,32 @@ hr {
   overflow: hidden;
   opacity: 0;
 }
-.dish-box .check-button {
-  display: none;
+
+.dish-desc .check-button {
+  position: absolute;
   border: none;
   border-radius: 0 15px 15px 0;
   height: 78px;
-  width: 100px;
+  width: 78px;
+  right: -78px;
+  bottom: 0px;
   text-align: center;
   background-color: #99E2D0;
+  transition: right 0.5s;
 }
-.dish-box .check-button .fa-check {
+.dish-desc .check-button .fa-check {
   color: #99E2D0;
   border-radius: 50%;
   padding: 4px 5px;
-  margin-top: 25px;
+  margin-top: 28px;
   background-color: white;
 }
-.dish-box .flex-item-left {
-  flex: 85%;
+.dish-desc .flex-item-left {
+  flex: 80%;
   min-width: 0;
+  transition: 500ms;
 }
-.dish-box .flex-item-left h3 {
+.dish-desc .flex-item-left h3 {
   margin: 15px 5px 7px 12px;
   font-weight: 500;
   font-size: 18px;
@@ -507,51 +519,43 @@ hr {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.dish-box .flex-item-left p {
+.dish-desc .flex-item-left p {
   margin: 0 5px 0 12px;
   font-size: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.dish-box .flex-item-right {
-  flex: 15%;
+.dish-desc .flex-item-right {
+  flex: 20%;
+  padding-top: 40px;
+  transition: 0.5s;
 }
-.dish-box .flex-item-right p {
+.dish-desc .flex-item-right p {
   font-weight: 500;
   margin: 0;
   text-align: center;
 }
-.dish-box .dish-desc:hover .desc-flex-item {
+
+.dish-desc:hover .desc-flex-item {
   flex: auto;
 }
-.dish-box .dish-desc:hover .flex-item-left {
-  flex: 80%;
-  padding-bottom: 18px;
+.dish-desc:hover .flex-item-left {
+  flex: 85%;
 }
-.dish-box .dish-desc:hover .flex-item-right {
-  flex: 20%;
-  padding-bottom: 18px;
+.dish-desc:hover .flex-item-right {
+  flex: 15%;
+  margin-right: 78px;
 }
-.dish-box .dish-desc:hover .icon-block {
-  display: inline-block;
+.dish-desc:hover .fa-check {
   animation: turn 0.5s;
 }
-.dish-box .dish-desc:hover .check-button {
-  display: inline-block;
-  animation: slide 0.5s;
-}
-@keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
+.dish-desc:hover .check-button {
+  right: 0px;
 }
 @keyframes turn {
   0% {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
   100% {
     transform: rotate(360deg);

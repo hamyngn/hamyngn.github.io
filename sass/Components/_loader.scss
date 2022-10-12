@@ -32,7 +32,7 @@
          }
       }
     
-      header, main, footer {
+      header, section, main, footer {
         opacity: 0;
       }
     
@@ -45,7 +45,7 @@
          }
       }
     
-      header, main, footer {
+      header, section, main, footer {
         animation: fadein .5s ease-in 2s;
         animation-fill-mode: forwards;
       }
