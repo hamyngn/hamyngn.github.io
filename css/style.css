@@ -487,6 +487,9 @@ hr {
   opacity: 0;
 }
 
+.dish-desc {
+  overflow: hidden;
+}
 .dish-desc .check-button {
   position: absolute;
   border: none;
