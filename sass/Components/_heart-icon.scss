@@ -1,13 +1,11 @@
 .fa-heart {
     font-size: 24px;
 }
-
 .fill-heart-icon {
     --fa-display: none;
     opacity: 0;    
     transition: all .5s ease-in-out;  
 }
-
 a:hover {
     .empty-heart-icon {
         --fa-display: none;
@@ -16,7 +14,6 @@ a:hover {
         --fa-display: inline-block;
     }
 }
-
 .fill-heart-icon:hover {
     background: linear-gradient(to top, $color-secondary, $color-primary);
     opacity: 1;
@@ -24,3 +21,19 @@ a:hover {
     -webkit-background-clip: text;
     color: transparent;
 }
+/* .fill-heart-icon {
+    --fa-display: none;
+    color: transparent; 
+}
+.heart-icon-block {
+    background: linear-gradient(to left, white 40%, $color-primary, $color-secondary) right;
+    background-size: 200%;
+    transition: all .5s ease-in-out;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.heart-icon-block:hover {
+    background-position: left;
+} 
+ */
+
